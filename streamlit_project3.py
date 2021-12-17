@@ -171,7 +171,7 @@ def main():
         with col1:
             search_term = st.selectbox("Select Product ID", df["item_id"].unique())
         with col2:
-            num_of_rec = st.number_input("How many product you want to be recommended?", 4, 20, 7)
+            num_of_rec = st.number_input("How many product recommended?", 4, 20, 7)
         st.write("#### Product information")
         product_info(int(search_term), df)
         if st.button("Recommend"):
@@ -188,7 +188,7 @@ def main():
         with col1:
             search_term = st.selectbox("Select Product ID", df["item_id"].unique())
         with col2:
-            num_of_rec = st.number_input("How many product you want to be recommended? ", 4, 20, 7)
+            num_of_rec = st.number_input("How many product recommended? ", 4, 20, 7)
         st.write("#### Product Information")
         product_info(search_term, df)
         if st.button("Recommend"):
