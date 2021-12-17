@@ -164,7 +164,7 @@ def main():
         st.subheader("Business Understanding")
         st.write("""- Two datasets given: product (product information) & review (product review from users).
 - Build the recommendation model for dataset listed above.
-- There is 2 way for building recommendation system: Content based/Collaborarive filtering.""")
+- There is 2 way for building recommendation system: Content based/Collaborative filtering.""")
         st.image("ecommerce.jpg")
         st.subheader("Data Understanding")
         st.write("""- Data was minned from TIKI site contain 4000 record for product dataset and 360k record for the review dataset.
