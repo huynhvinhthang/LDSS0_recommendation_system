@@ -148,7 +148,7 @@ def main():
     with col3:
         st.write("")
     st.sidebar.write("### Project 3 - Recommendation System")
-    menu = ["Home", "Content Based Recommended - Cosim", "Content Based Recommended - Gensim", 
+    menu = ["Home", "Content Based Recommended - Cosine", "Content Based Recommended - Gensim", 
             "Colaborative Filtering - ALS" , "About"]
     choice = st.sidebar.selectbox("",menu)
 
@@ -164,7 +164,7 @@ def main():
         st.subheader("Business Understanding")
         st.write("""- Two datasets given: product (product information) & review (product review from users).
 - Build the recommendation model for dataset listed above.
-- There is 2 way for building recommendation system: Content based/Colaborarive filtering.""")
+- There is 2 way for building recommendation system: Content based/Collaborarive filtering.""")
         st.image("ecommerce.jpg")
         st.subheader("Data Understanding")
         st.write("""- Data was minned from TIKI site contain 4000 record for product dataset and 360k record for the review dataset.
@@ -172,14 +172,14 @@ def main():
 - Main features in the two dataset is belonged to NPL part, so there is a bunch of task for preprocessing those features into categorical feature, some numerical exist in those dataset contain: product/reviewer ID, rating.""")
         st.image("content_based.jpg")
 
-    elif choice == "Content Based Recommended - Cosim":
-        st.title("Content-Based with Cosim Similarity")
+    elif choice == "Content Based Recommended - Cosine":
+        st.title("Content-Based with Cosine Similarity")
         st.subheader("Recommended Products")
         col1, col2= st.columns(2)
         with col1:
             search_term = st.selectbox("Select Product ID", df["item_id"].unique())
         with col2:
-            num_of_rec = st.number_input("How many product you want to be recommended?", 4, 20, 7)
+            num_of_rec = st.number_input("How many product recommended?", 4, 20, 7)
         st.write("#### Product information")
         product_info(int(search_term), df)
         if st.button("Recommend"):
@@ -196,7 +196,7 @@ def main():
         with col1:
             search_term = st.selectbox("Select Product ID", df["item_id"].unique())
         with col2:
-            num_of_rec = st.number_input("How many product you want to be recommended? ", 4, 20, 7)
+            num_of_rec = st.number_input("How many product recommended? ", 4, 20, 7)
         st.write("#### Product Information")
         product_info(search_term, df)
         if st.button("Recommend"):
